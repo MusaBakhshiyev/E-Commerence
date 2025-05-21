@@ -1,0 +1,48 @@
+.footer{
+    background-color: #0b1836;
+    color: white;
+    padding: 20px var(--sitePadding);
+    display: flex;
+    justify-content: space-between;
+}
+
+.company{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.company p{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.company img{
+    width: 140px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px 0;
+}
+
+.support{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.support p{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact p{
+    cursor: pointer;
+    font-size: 46px;
+}

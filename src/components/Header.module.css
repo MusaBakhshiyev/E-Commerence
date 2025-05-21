@@ -1,6 +1,8 @@
 header{
-  position: relative;
-  overflow: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: white;
 }
 
 .header1 {
@@ -38,15 +40,16 @@ header{
   justify-content: space-between;
 }
 
+
 .header2 img{
-  width: 140px;
+  width: 10vw;
 }
 
 .header2 .search{
   border:1px solid gray;
   border-radius: 10px;
   padding: 5px;
-  width:400px;
+  width:33vw;
   display: flex;
   justify-content: space-between;
   margin-left: 30px;
@@ -71,15 +74,15 @@ header{
 
 .options{
     display: flex;
-    gap:20px;
+    gap:1vw;
     margin-left: auto;
     margin-right: 20px;
 }
 
 .options button{
-    font-size: 18px;
-    background-image: linear-gradient(to right,#0c6297,#06334e);
-    padding: 10px;
+    font-size: clamp(12px,1.2vw,18px);
+    background-image: linear-gradient(to right, #264aa0,#0b1836);
+    padding: 0.8vw;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -96,9 +99,9 @@ header{
     color:#f17a17;
     background-color: white;
     border-radius: 50%;
-    height: 35px;
-    width: 35px;
-    font-size: 24px;
+    height: clamp(28px,2.5vw,35px);
+    width: clamp(28px,2.5vw,35px);
+    font-size: clamp(14px,1.6vw,24px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -110,26 +113,40 @@ header{
 }
 
 .cart_count,.favorite_count,.compare_count{
-    width: 20px;
-    height: 20px;
+    width: clamp(16px,1.5vw,20px);
+    height:clamp(16px,1.5vw,20px);
     background-color: #f17a17;
     position: absolute;
-    top: -8px;
-    right: -8px;
+    top: max(-8px,-0.6vw);
+    right: max(-8px,-0.6vw);
     border-radius: 50%;
-    font-size: 14px;
-    line-height: 20px;
-    text-align: center;
+    font-size: clamp(8px,0.8vw,14px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
 .header2 .catalog{
   background-color: #f17a17;
-  font-size:18px;
+  font-size: clamp(12px,1.5vw,18px);
   border-radius: 10px;
   padding: 10px;
   display: flex;
   align-items: center;
   gap:10px;
   color:white;
+}
+
+@media (max-width: 1050px) {
+  .options{
+    position: absolute;
+    right: -15px;
+    top:130px;
+    flex-direction: column;
+  }
+
+  .options button>span:last-child{
+    display: none;
+  }
 }

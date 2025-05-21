@@ -11,13 +11,18 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    align-items: flex-start;
+
 }
+
 
 .categories {
     display: flex;
     flex-direction: column;
     gap: min(20px, 0.8em);
     width: 25%;
+    position: sticky;
+    top:130px;
 
 }
 
@@ -28,18 +33,19 @@
     gap: min(15px, 0.6em);
     padding: min(10px, 0.5em);
     color: white;
-    background-image: linear-gradient(to left, #0a3e5f, #06334e);
+    background-image: linear-gradient(to left, #183069, #0b1836);
     border-radius: 10px;
     cursor: pointer;
-    transition: all 0.5s ease-in;
+    transition: all 0.3s ease-in-out;
 }
 
 .category:hover {
-    background-image: linear-gradient(to left, #0e6296, #06334e);
+    background-image: linear-gradient(to left, #315cc2, #0b1836);
 }
 
 .isSelected {
-    background-image: linear-gradient(to left, #1ba8ff, #06334e);
+    background-image: linear-gradient(to left, #315cc2, #0b1836);
+    outline: 4px solid #f17a17;
 }
 
 
@@ -61,7 +67,7 @@
     display: flex;
     width: 72%;
     flex-direction: column;
-    gap:min(20px, 2em);
+    gap: min(20px, 2em);
 }
 
 .products {
@@ -95,7 +101,7 @@
 
 
 @media (max-width: 1199px) {
-      .products_button{
+    .products_button {
         width: 65%;
     }
 
@@ -118,11 +124,12 @@
 }
 
 @media (max-width: 850px) {
-    .products_button{
-          width: 100%;
+    .products_button {
+        width: 100%;
     }
+
     .products {
-      
+
         justify-content: space-between;
         column-gap: 0;
     }
@@ -138,6 +145,7 @@
         width: 100%;
         flex-wrap: wrap;
         justify-content: space-between;
+        position: static;
     }
 
     .category span {

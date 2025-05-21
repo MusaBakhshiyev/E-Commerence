@@ -1,5 +1,6 @@
 import './App.css'
 import Header from "./components/Header"
+import Footer from "./components/Footer"
 import { BrowserRouter, Routes,Route, NavLink } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Cart from './pages/Cart/Cart'
@@ -17,6 +18,7 @@ function App() {
         <Route path='/favorite' element={<Favorite/>  }/>
         <Route path='/compare' element={<Compare/>  }/>
       </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }
