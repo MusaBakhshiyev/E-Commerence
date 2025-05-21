@@ -1,0 +1,204 @@
+:global(.product-swiper .swiper-pagination-bullet) {
+    width: 20px;
+    border-radius: 5px;
+    background-color: #06334e;
+}
+
+:global(.product-swiper) {
+    padding-bottom: 25px;
+
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(194, 194, 194);
+    justify-content: space-between;
+    box-shadow: 0px 0px 2px rgb(78, 78, 78);
+    padding: 10px;
+    border-radius: 10px;
+    height: 100%;    
+    gap:10px;
+}
+
+.image_title h3{
+    height: clamp(32px,2em,50px);
+    font-size: 1.1em;
+}
+
+
+.images {
+    width: 80%;
+    text-align: center;
+}
+
+.images img {
+    width: 60%;
+}
+
+.scale {
+    scale: 1;
+}
+
+.enlarge {
+    scale: 1.2;
+}
+
+
+.favorite_scale {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    height: 10%;
+}
+
+.favorite_scale>span:not(:first-child) {
+    font-size: 1.5em;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+
+
+.go_cart{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-right: auto;
+    background-color: #f17a17;
+    opacity: 1;
+    color: white;
+    font-size: 1em;
+    padding: min(10px,0.5em);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.go_cart span:first-child {
+    font-size: calc(1em + 6px);
+}
+
+.favorite_scale>span:not(:first-child):hover {
+    color: #f17a17;
+    opacity: 1;
+}
+
+.remove_favorite,.remove_Compare{
+    color:#f17a17;
+    opacity: 1 !important;
+    transition: all 0.5s ease;
+}
+.remove_favorite:hover,.remove_Compare:hover{
+    opacity: 0.5 !important;
+}
+
+.change_month {
+    display: flex;
+    justify-content: space-between;
+    gap:5px;
+}
+
+
+.price {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(194, 194, 194);
+    padding: min(10px,0.8em);
+    border-radius: 10px;
+    justify-content: center;
+    gap: 5px;
+}
+
+.price span:first-child {
+    text-decoration: line-through;
+    font-size: 1.1em;
+}
+
+.price span:last-child {
+    font-size: calc(1.1em + 4px);
+    font-weight: 600;
+}
+
+
+.partial_payment {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(194, 194, 194);
+    padding: min(10px,0.8em);
+    gap: 5px;
+    border-radius: 10px;
+}
+
+.partial_payment h3{
+    font-size: 1.2em;
+}
+
+.periods {
+    display: flex;
+    gap: min(10px,0.5em);
+}
+
+.periods span {
+    padding: 5px;
+    font-size: 1em;
+    height: max-content;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.active_month {
+    border: 1px solid rgb(194, 194, 194);
+}
+
+.change_count {
+    display: flex;
+    justify-content: space-between;
+    gap:5px;
+}
+
+
+.change_count>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgb(194, 194, 194);
+    font-size: 1.2em;
+    padding: min(10px,0.4em);
+    gap: 0.6em;
+    border-radius: 10px;
+}
+
+.change_count button {
+    background-color: #f17a17;
+    color: white;
+    font-size: 1em;
+    padding: min(10px,0.5em) clamp(5px,1em,30px);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.change_count button span:first-child {
+    font-size: calc(1em + 6px) ;
+}
+
+.count span:first-child,
+.count span:last-child {
+    cursor: pointer;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s ease;
+}
+
+.count span:first-child:hover,
+.count span:last-child:hover {
+    background-color: rgb(170, 170, 170);
+
+}
