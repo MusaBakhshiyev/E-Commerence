@@ -1,0 +1,14 @@
+.voice_recorder{
+   
+}
+
+.voice_recorder button{
+    padding: 10px;
+    color: white;
+    background-color: #f17a17;
+    border-radius: 10px;
+}
+
+.stop_recording{
+    background-color: green;
+}
