@@ -6,6 +6,7 @@ import Home from './pages/Home/Home'
 import Cart from './pages/Cart/Cart'
 import Favorite from './pages/Favorite/Favorite'
 import Compare from './pages/Compare/Compare'
+import Contact from './pages/Contact/Contact'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home/>  }/>
+        <Route path='/contact' element={<Contact/>  }/>
         <Route path='/cart' element={<Cart/>  }/>
         <Route path='/favorite' element={<Favorite/>  }/>
         <Route path='/compare' element={<Compare/>  }/>

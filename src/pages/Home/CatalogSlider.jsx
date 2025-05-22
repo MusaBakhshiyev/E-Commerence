@@ -4,6 +4,8 @@ import { MdComputer } from "react-icons/md";
 import { FaComputer } from "react-icons/fa6";
 import { SlScreenSmartphone } from "react-icons/sl";
 import { SlScreenTablet } from "react-icons/sl";
+import { IoTvOutline } from "react-icons/io5";
+import { FaRegArrowAltCircleRight } from "react-icons/fa";
 
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -18,13 +20,13 @@ export default function CatalogSlider() {
         {
             id: 1,
             img: "https://irshad.az/cdn-cgi/image/width=876/storage/pages/2596/sayt-cover-29.png",
-            title:"test1"
+            title: "test1"
         },
-        
+
         {
             id: 2,
             img: "https://irshad.az/cdn-cgi/image/width=876/storage/pages/2600/sayt-cover-1-4.png",
-            title:"test2"
+            title: "test2"
         }
     ]
     return (
@@ -35,12 +37,12 @@ export default function CatalogSlider() {
                     pagination={{ clickable: true }}
                     scrollbar={{ draggable: true }}
                 >
-                    {data.map(d=>(
+                    {data.map(d => (
                         <SwiperSlide key={d.id}>
                             <img src={d.img} alt="image" />
                         </SwiperSlide>
                     ))}
-                    
+
                 </Swiper>
             </div>
 
@@ -49,22 +51,27 @@ export default function CatalogSlider() {
                     <li>
                         <span><MdComputer /></span>
                         <span>Notbuklar</span>
+                        <span><FaRegArrowAltCircleRight /></span>
                     </li>
                     <li>
                         <span><FaComputer /></span>
                         <span>Personal Kompüterlər</span>
-                    </li>
-                    <li>
-                        <span><MdComputer /></span>
-                        <span>Notbuklar</span>
+                        <span><FaRegArrowAltCircleRight /></span>
                     </li>
                     <li>
                         <span><SlScreenSmartphone /></span>
                         <span>Smartfonlar</span>
+                        <span><FaRegArrowAltCircleRight /></span>
                     </li>
                     <li>
                         <span><SlScreenTablet /></span>
                         <span>Panşetlər</span>
+                        <span><FaRegArrowAltCircleRight /></span>
+                    </li>
+                    <li>
+                        <span><IoTvOutline /></span>
+                        <span>Televizorlar</span>
+                        <span><FaRegArrowAltCircleRight /></span>
                     </li>
                 </ul>
             </div>

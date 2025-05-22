@@ -47,20 +47,23 @@ export default function NewProducts() {
         modules={[Navigation, Pagination, Scrollbar, Autoplay, A11y]}
         slidesPerView={3}
         spaceBetween={20}
+        scrollbar={{ draggable: true }}
         loop={true}
+        observer={true}
+        observeParents={true}
         autoplay={{ delay: 3000, disableOnInteraction: true }}
         breakpoints={{
-         0: {
+          0: {
             slidesPerView: 1,
           },
-         
+
           500: {
             slidesPerView: 1.5,
           },
-         701: {
+          701: {
             slidesPerView: 2,
           },
-        931: {
+          931: {
             slidesPerView: 2.5,
           },
           1100: {

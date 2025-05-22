@@ -1,7 +1,7 @@
 :global(.product-swiper .swiper-pagination-bullet) {
     width: 20px;
     border-radius: 5px;
-    background-color: #06334e;
+    background-color: #0b1836;
 }
 
 :global(.product-swiper) {

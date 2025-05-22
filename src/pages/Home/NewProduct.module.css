@@ -1,15 +1,27 @@
+:global(.products-swiper) {
+    padding-bottom: 20px !important;
+}
+
+:global(.products-swiper .swiper-scrollbar) {
+   height: 8px;
+   cursor: pointer;
+}
+
+
+
 .newproducts {
     margin: 80px 0;
 }
 
 .newproducts h2 {
-    margin-bottom: 20px;
+    font-size: clamp(20px, 2.5vw, 32px);
+    margin-bottom: min(20px, 1.5vw);
 }
 
 .categories {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: min(20px, 1.5vw);
 }
 
 .categories button {
@@ -17,7 +29,7 @@
     color: white;
     border-radius: 15px;
     padding: 15px;
-    font-size: 18px;
+    font-size: clamp(12px, 1.8vw, 18px);
     cursor: pointer;
 }
 
@@ -27,8 +39,8 @@
 
 
 .products {
-    margin-top: 80px;
-    padding:10px;
+    margin-top: min(30px,1.5vw);
+    padding: 10px;
     height: 42vw;
     font-size: clamp(14px, 1.3vw, 20px);
 }
@@ -37,13 +49,13 @@
 @media (max-width: 1099px) {
     .products {
         font-size: clamp(16px, 1.5vw, 32px);
-        height: 50vw;
+        height: 52vw;
     }
 }
 
 @media (max-width: 930px) {
     .products {
-        height: 62vw;
+        height: 63.5vw;
         font-size: clamp(12px, 2vw, 32px);
     }
 }
@@ -51,27 +63,33 @@
 
 @media (max-width: 700px) {
     .products {
-          height: 78vw;
-          font-size: clamp(12px, 2.5vw, 32px);
+        height: 80vw;
+        font-size: clamp(12px, 2.5vw, 32px);
     }
 }
 
 @media (max-width: 550px) {
     .products {
-          height: 85vw;
-          font-size: clamp(12px, 2.5vw, 32px);
+        height: 88vw;
+        font-size: clamp(12px, 2.5vw, 32px);
     }
 }
 
 @media (max-width: 500px) {
     .products {
-          height: 110vw;
-          font-size: clamp(12px, 2.5vw, 32px);
+        height: 110vw;
+        font-size: clamp(12px, 2.5vw, 32px);
     }
 }
 
+@media (max-width:420px) {
+    .products {
+        height: 120vw;
+    }
+}
 
-
-
-
-
+@media (max-width:360px) {
+    .products {
+        height: 150vw;
+    }
+}

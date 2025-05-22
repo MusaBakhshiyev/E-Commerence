@@ -12,13 +12,24 @@ import { TbShoppingCartPlus } from "react-icons/tb";
 import { NavLink } from 'react-router-dom';
 import { IoHomeOutline } from "react-icons/io5";
 import { RiMenuFoldLine } from "react-icons/ri";
+import { RiMenuFold2Line } from "react-icons/ri";
+
+import { MdComputer } from "react-icons/md";
+import { FaComputer } from "react-icons/fa6";
+import { SlScreenSmartphone } from "react-icons/sl";
+import { SlScreenTablet } from "react-icons/sl";
+import { IoTvOutline } from "react-icons/io5";
+import { FaRegArrowAltCircleRight } from "react-icons/fa";
 
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
+import { useState } from 'react';
+
 
 export default function Header() {
 
+    const [isCatalogOpen, setIsCatalogOpen] = useState(false);
     const navigate = useNavigate();
     const cartCount = useSelector(state =>
         state.cart.items.reduce((total, item) => total + item.quantity, 0)
@@ -35,12 +46,12 @@ export default function Header() {
                 <NavLink to='/'>
                     <span><IoHomeOutline /></span>
                     <span>Ana səhifə</span>
-                </NavLink>
+                </NavLink >
                 <NavLink>
                     <span><IoNewspaperOutline /></span>
                     <span>Xəbərlər</span>
                 </NavLink>
-                <NavLink>
+                <NavLink to='/contact'>
                     <span><GrContact /></span>
                     <span>Əlaqə</span>
                 </NavLink>
@@ -70,7 +81,40 @@ export default function Header() {
                     <button onClick={() => navigate("/favorite")}><span><RiHeartAdd2Line />  <span className={style.favorite_count}>{favoriteCount}</span> </span><span>Bəyəndim</span></button>
                     <button onClick={() => navigate("/cart")}><span><TbShoppingCartPlus /> <span className={style.cart_count}>{cartCount}</span></span> <span>Səbət</span></button>
                 </div>
-                <button className={style.catalog}><span><RiMenuFoldLine /></span> <span>Katalog</span> </button>
+                <div className={style.catalog_menu}>
+                    <button onClick={()=>setIsCatalogOpen(prev=>!prev)} className={style.catalog}><span>{isCatalogOpen?<RiMenuFold2Line/>:<RiMenuFoldLine />}</span> <span>Katalog</span> </button>
+
+                    <div className={`${style.catalogs} ${isCatalogOpen?style.catalogs_show:style.catalogs_hide}`}>
+                        <ul>
+                            <li>
+                                <span><MdComputer /></span>
+                                <span>Notbuklar</span>
+                                <span><FaRegArrowAltCircleRight /></span>
+                            </li>
+                            <li>
+                                <span><FaComputer /></span>
+                                <span>Personal Kompüterlər</span>
+                                <span><FaRegArrowAltCircleRight /></span>
+                            </li>
+                            <li>
+                                <span><SlScreenSmartphone /></span>
+                                <span>Smartfonlar</span>
+                                <span><FaRegArrowAltCircleRight /></span>
+                            </li>
+                            <li>
+                                <span><SlScreenTablet /></span>
+                                <span>Panşetlər</span>
+                                <span><FaRegArrowAltCircleRight /></span>
+                            </li>
+                            <li>
+                                <span><IoTvOutline /></span>
+                                <span>Televizorlar</span>
+                                <span><FaRegArrowAltCircleRight /></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
             </div>
         </header>
 

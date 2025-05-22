@@ -3,7 +3,8 @@
 }
 
 .popular_categories_section h1 {
-    margin-bottom: 20px;
+    margin-bottom: min(20px, 2vw);
+    font-size: clamp(20px, 2.5vw, 32px);
 }
 
 
