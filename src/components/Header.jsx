@@ -31,6 +31,7 @@ export default function Header() {
 
     const [isCatalogOpen, setIsCatalogOpen] = useState(false);
     const navigate = useNavigate();
+    const [searchText, setSearchText] = useState("");
     const cartCount = useSelector(state =>
         state.cart.items.reduce((total, item) => total + item.quantity, 0)
     );
@@ -73,8 +74,8 @@ export default function Header() {
             <div className={style.header2}>
                 <img src={logo} alt="logo" />
                 <div className={style.search}>
-                    <input type="text" />
-                    <button><BsSearch /><span>Axtar</span></button>
+                    <input placeholder='axtarın(ən az 2 hərf)' value={searchText} onChange={(e) => setSearchText(e.target.value.trimStart().replaceAll(/\s{2,}/g, ' '))} type="text" />
+                    <button onClick={() => (searchText.trim().length >= 2 && navigate("/search", { state: { title: searchText.trim().toLowerCase() } }))}><BsSearch /><span>Axtar</span></button>
                 </div>
                 <div className={style.options}>
                     <button onClick={() => navigate("/compare")} ><span><RiScales3Line /> <span className={style.compare_count}>{compareCount}</span></span> <span>Müqayisə</span> </button>
@@ -82,9 +83,9 @@ export default function Header() {
                     <button onClick={() => navigate("/cart")}><span><TbShoppingCartPlus /> <span className={style.cart_count}>{cartCount}</span></span> <span>Səbət</span></button>
                 </div>
                 <div className={style.catalog_menu}>
-                    <button onClick={()=>setIsCatalogOpen(prev=>!prev)} className={style.catalog}><span>{isCatalogOpen?<RiMenuFold2Line/>:<RiMenuFoldLine />}</span> <span>Katalog</span> </button>
+                    <button onClick={() => setIsCatalogOpen(prev => !prev)} className={style.catalog}><span>{isCatalogOpen ? <RiMenuFold2Line /> : <RiMenuFoldLine />}</span> <span>Katalog</span> </button>
 
-                    <div className={`${style.catalogs} ${isCatalogOpen?style.catalogs_show:style.catalogs_hide}`}>
+                    <div className={`${style.catalogs} ${isCatalogOpen ? style.catalogs_show : style.catalogs_hide}`}>
                         <ul>
                             <li>
                                 <span><MdComputer /></span>

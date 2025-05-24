@@ -11,3 +11,19 @@
 :root{
   --sitePadding: 5%;
 }
+
+body{
+  height: 100vh;
+  position: relative;
+}
+
+#root{
+  height: 100vh;
+  position: relative;
+}
+
+footer{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

@@ -7,6 +7,7 @@ import Cart from './pages/Cart/Cart'
 import Favorite from './pages/Favorite/Favorite'
 import Compare from './pages/Compare/Compare'
 import Contact from './pages/Contact/Contact'
+import Search from './pages/Search/Search'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path='/cart' element={<Cart/>  }/>
         <Route path='/favorite' element={<Favorite/>  }/>
         <Route path='/compare' element={<Compare/>  }/>
+        <Route path='/search' element={<Search/>  }/>
       </Routes>
       <Footer />
     </BrowserRouter>

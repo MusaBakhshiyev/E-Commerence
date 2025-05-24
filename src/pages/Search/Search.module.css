@@ -1,0 +1,23 @@
+.search_container {
+    padding: 20px var(--sitePadding);
+
+}
+
+.search_container h1{
+    margin-bottom: min(20px,1em);
+    font-size: clamp(18px,2vw,32px);
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: min(15px,1em);
+}
+
+.products span {
+    font-size: clamp(18px,2vw,32px);
+}
+
+.product {
+    width: calc(33.6% - min(15px, 1em));
+}
