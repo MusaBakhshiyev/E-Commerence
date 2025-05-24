@@ -19,11 +19,13 @@
     border-radius: 10px;
     height: 100%;    
     gap:10px;
+    cursor: pointer;
 }
 
 .image_title h3{
     height: clamp(32px,2em,50px);
     font-size: 1.1em;
+    cursor: pointer;
 }
 
 
@@ -179,6 +181,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    cursor: pointer;
 }
 
 .change_count button span:first-child {

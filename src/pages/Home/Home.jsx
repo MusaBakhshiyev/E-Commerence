@@ -6,11 +6,11 @@ import PopularCategories from './PopularCategories'
 
 export default function Home() {
     return (
-        <main>
+        <section>
             <CatalogSlider/>
             <NewProducts/>
             <PopularCategories/>
-        </main>
+        </section>
     )
 }
 

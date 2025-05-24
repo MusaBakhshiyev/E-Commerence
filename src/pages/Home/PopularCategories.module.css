@@ -89,7 +89,7 @@
 .show_more {
     background-color: #f17a17;
     color: white;
-    font-size: 1.1em;
+    font-size: clamp(14px,2vw,18px);
     padding: min(15px, 0.8em);
     border-radius: 10px;
     display: flex;

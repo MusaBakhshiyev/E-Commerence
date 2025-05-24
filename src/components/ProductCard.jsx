@@ -50,47 +50,49 @@ export default function ProductCard({ product }) {
     }
 
     return (
-        <div className={style.product}>
+        <div className={style.product} onClick={() => navigate("/detail",{state:{product:product}})}>
             <div className={style.favorite_scale}>
-                {cartItems.some(p => p.id == product.id) ? <span onClick={() => navigate("/cart")} className={style.go_cart}><span><TbShoppingCartCopy /></span> <span>Səbətə keç</span></span> : <span></span>}
+                {cartItems.some(p => p.id == product.id) ? <span onClick={(e) => { e.stopPropagation(); navigate("/cart") }} className={style.go_cart}><span><TbShoppingCartCopy /></span> <span>Səbətə keç</span></span> : <span></span>}
 
                 {compareItems.some(p => p.id == product.id) ?
-                    <span onClick={() => handleRemoveFromCompare(product.id)} className={style.remove_Compare}><span><TbScaleOff /></span></span>
-                    : <span onClick={() => handleAddToCompare(product)} className={style.add_Compare}><span><RiScales3Line /></span></span>}
+                    <span onClick={(e) => { e.stopPropagation(); handleRemoveFromCompare(product.id) }} className={style.remove_Compare}><span><TbScaleOff /></span></span>
+                    : <span onClick={(e) => { e.stopPropagation(); handleAddToCompare(product) }} className={style.add_Compare}><span><RiScales3Line /></span></span>}
 
                 {favoriteItems.some(p => p.id == product.id) ?
-                    <span onClick={() => handleRemoveFromFavorite(product.id)} className={style.remove_favorite}><span><FaHeartCircleMinus /></span></span>
-                    : <span onClick={() => handleAddToFavorite(product)} className={style.add_favorite}><span><RiHeartAdd2Line /></span></span>}
+                    <span onClick={(e) => { e.stopPropagation(); handleRemoveFromFavorite(product.id) }} className={style.remove_favorite}><span><FaHeartCircleMinus /></span></span>
+                    : <span onClick={(e) => { e.stopPropagation(); handleAddToFavorite(product) }} className={style.add_favorite}><span><RiHeartAdd2Line /></span></span>}
 
             </div>
-            <div className={style.image_title}>
-                <Swiper className={`${style.images} product-swiper`}
-                    modules={[Pagination, A11y]}
-                    pagination={{ clickable: true }}
-                    allowTouchMove={false}
-                    simulateTouch={false}
-                >
-                    {product.images.map((img, i) => (
-                        <SwiperSlide key={i}>
-                            <img
-                                className={product.category === "smartphones" ? style.scale : style.enlarge}
-                                src={img}
-                            />
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+            <div className={style.image_title} >
+                <div onClick={(e) => e.stopPropagation()}>
+                    <Swiper className={`${style.images} product-swiper`}
+                        modules={[Pagination, A11y]}
+                        pagination={{ clickable: true }}
+                        allowTouchMove={false}
+                        simulateTouch={false}
+                    >
+                        {product.images.map((img, i) => (
+                            <SwiperSlide key={i}>
+                                <img
+                                    className={product.category === "smartphones" ? style.scale : style.enlarge}
+                                    src={img}
+                                />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
                 <h3>{product.title}</h3>
             </div>
 
 
 
-            <div className={style.change_month}>
+            <div className={style.change_month} onClick={(e) => e.stopPropagation()}>
                 <div className={style.price}>
                     <span>{totalPrice} Azn</span>
                     <span>{discountedPrice} Azn</span>
                 </div>
 
-                <div className={style.partial_payment}>
+                <div className={style.partial_payment} onClick={(e) => e.stopPropagation()}>
                     <div className={style.periods}>
                         {[6, 12, 18].map((m) => (
                             <span
@@ -107,12 +109,12 @@ export default function ProductCard({ product }) {
             </div>
 
             <div className={style.change_count}>
-                <div className={style.count}>
+                <div onClick={(e) => { e.stopPropagation() }} className={style.count}>
                     <span onClick={() => setCount(c => (c - 1) == 0 ? 1 : (c - 1))}>-</span>
                     <span>{count}</span>
                     <span onClick={() => setCount(c => c + 1)}>+</span>
                 </div>
-                <button onClick={() => handleAddToCart(product, count)}>
+                <button onClick={(e) => { e.stopPropagation(); handleAddToCart(product, count) }}>
                     <span><TbShoppingCartPlus /></span> Səbətə əlavə et
                 </button>
             </div>

@@ -40,6 +40,14 @@ export default function Header() {
 
     const compareCount = useSelector(state => state.compare.items.length);
 
+    const search = () => {
+        if (searchText.trim().length >= 2) {
+            navigate("/search", { state: { title: searchText.trim().toLowerCase() } })
+            setSearchText("");
+        }
+    }
+
+
 
     return (
         <header>
@@ -57,16 +65,12 @@ export default function Header() {
                     <span>Əlaqə</span>
                 </NavLink>
                 <NavLink>
-                    <span><TbTruckDelivery /></span>
-                    <span>Ödəniş və çatdırılma</span>
-                </NavLink>
-                <NavLink>
                     <span><IoStorefrontOutline /></span>
                     <span>Mağazalar</span>
                 </NavLink>
                 <NavLink>
                     <span><GrMapLocation /></span>
-                    <span>Baş ofis - 28may</span>
+                    <span>Baş ofis</span>
                 </NavLink>
             </div>
 
@@ -74,8 +78,8 @@ export default function Header() {
             <div className={style.header2}>
                 <img src={logo} alt="logo" />
                 <div className={style.search}>
-                    <input placeholder='axtarın(ən az 2 hərf)' value={searchText} onChange={(e) => setSearchText(e.target.value.trimStart().replaceAll(/\s{2,}/g, ' '))} type="text" />
-                    <button onClick={() => (searchText.trim().length >= 2 && navigate("/search", { state: { title: searchText.trim().toLowerCase() } }))}><BsSearch /><span>Axtar</span></button>
+                    <input placeholder='axtarın (ən az 2 hərf)' value={searchText} onChange={(e) => setSearchText(e.target.value.trimStart().replaceAll(/\s{2,}/g, ' '))} type="text" />
+                    <button onClick={search}><BsSearch /><span>Axtar</span></button>
                 </div>
                 <div className={style.options}>
                     <button onClick={() => navigate("/compare")} ><span><RiScales3Line /> <span className={style.compare_count}>{compareCount}</span></span> <span>Müqayisə</span> </button>
