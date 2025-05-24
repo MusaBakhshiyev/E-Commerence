@@ -6,9 +6,34 @@
 .products {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: min(20px,1em);
+    font-size: clamp(8px, 1.3vw, 20px);
+    justify-content: center;
 }
 
 .product {
     width: 32%;
+}
+
+
+@media (max-width:700px) {
+    .products {
+        font-size: clamp(10px, 2vw, 20px);
+    }
+
+    .product {
+        width: 48%;
+    }
+
+}
+
+@media (max-width:480px) {
+    .products {
+        font-size: clamp(8px, 3vw, 20px);
+    }
+
+    .product {
+        width: 80%;
+    }
+
 }

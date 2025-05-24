@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { addMessage } from '../redux/chatSlice'; 
+import { addMessage } from '../redux/chatSlice';
 import style from './VoiceRecorder.module.css';
 import { FaMicrophone, FaStop } from 'react-icons/fa';
 
@@ -8,7 +8,7 @@ export default function VoiceRecorder() {
   const [isRecording, setIsRecording] = useState(false);
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
-  const dispatch = useDispatch(); 
+  const dispatch = useDispatch();
 
   const startRecording = async () => {
     try {
@@ -30,7 +30,7 @@ export default function VoiceRecorder() {
         dispatch(
           addMessage({
             type: 'voice',
-            blobUrl: url,
+            blob: audioBlob,
             timestamp: Date.now(),
           })
         );
@@ -60,7 +60,7 @@ export default function VoiceRecorder() {
           <FaStop />
         </button>
       ) : (
-        <button className={style.start_button} onClick={startRecording}>
+        <button className={style.start_recording} onClick={startRecording}>
           <FaMicrophone />
         </button>
       )}

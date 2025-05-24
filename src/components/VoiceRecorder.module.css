@@ -1,14 +1,40 @@
-.voice_recorder{
-   
-}
-
 .voice_recorder button{
-    padding: 10px;
+    padding:  min(10px,0.5em);
     color: white;
     background-color: #f17a17;
-    border-radius: 10px;
+    border-radius: min(10px,0.5em);
+    font-size: clamp(12px,1.5vw, 24px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+   transition: scale 1s ease;
+}
+
+.voice_recorder button:hover{
+    scale:1.1;
 }
 
 .stop_recording{
-    background-color: green;
+   animation: recording 2s linear infinite;
 }
+
+@keyframes recording {
+    0%{
+        scale:1.1;
+    }
+    25%{
+        scale:1.2;
+    }
+    50%{
+        scale: 1.3;
+    }
+    75%{
+        scale:1.2;
+    }
+    100%{
+        scale:1.1;
+    }
+
+}
+

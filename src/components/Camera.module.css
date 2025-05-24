@@ -1,0 +1,70 @@
+.camera {
+    background-color: #f17a17;
+    padding: min(10px,0.5em);
+    color: white;
+    border: none;
+    border-radius: min(10px,0.5em);
+    font-size: clamp(12px, 1.5vw, 24px);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: scale 1s linear;
+}
+
+.camera:hover {
+    scale: 1.1;
+    opacity: 0.5;
+}
+
+.take_photo {
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+}
+
+.take_button {
+    padding: min(10px,0.7em);
+    color: white;
+    border-radius: min(10px,0.5em);
+    background-color: #f17a17;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: scale 1s linear;
+    font-size: clamp(12px, 1.5vw, 24px);
+}
+
+.take_button:hover {
+    scale: 1.1;
+    opacity: 0.5;
+}
+
+.exit_camera {
+    padding: min(10px,1.2em);
+    color: white;
+   border-radius: min(10px,0.5em);
+    background-color: #f17a17;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.3vw;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: scale 1s linear;
+}
+
+.exit_camera:hover {
+    scale: 1.1;
+    opacity: 0.5;
+}
+
+
+
+.video_frame {
+    width: 32vw;
+    border-radius: 10px;
+}

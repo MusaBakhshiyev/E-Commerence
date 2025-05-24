@@ -27,3 +27,12 @@ export const clearMessagesFromDB = async () => {
   const db = await getDB();
   await db.clear(STORE_NAME);
 };
+
+export const deleteMessageFromDB = async (timestamp) => {
+  const db = await getDB();
+  const all = await db.getAll(STORE_NAME);
+  const target = all.find(msg => msg.timestamp === timestamp);
+  if (target) {
+    await db.delete(STORE_NAME, target.id);
+  }
+};

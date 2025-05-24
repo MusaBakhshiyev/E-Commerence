@@ -1,8 +1,8 @@
-:global(.products-swiper) {
+:global(.products-swiper-new) {
     padding-bottom: 20px !important;
 }
 
-:global(.products-swiper .swiper-scrollbar) {
+:global(.products-swiper-new .swiper-scrollbar) {
    height: 8px;
    cursor: pointer;
 }

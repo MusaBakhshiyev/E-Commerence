@@ -1,11 +1,28 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { addMessageToDB, getAllMessagesFromDB, clearMessagesFromDB } from '../utils/indexedDB';
+import { addMessageToDB, getAllMessagesFromDB, clearMessagesFromDB, deleteMessageFromDB } from '../utils/indexedDB';
 
 export const loadChatHistory = createAsyncThunk(
   'chat/loadChatHistory',
   async () => {
     const messages = await getAllMessagesFromDB();
-    return messages;
+
+    const enrichedMessages = messages.map(msg => {
+      if (msg.type === 'voice' && msg.blob) {
+        return {
+          ...msg,
+          blobUrl: URL.createObjectURL(msg.blob)
+        };
+      }
+      else if (msg.type === 'photo' && msg.blob) {
+        return {
+          ...msg,
+          blobUrl: URL.createObjectURL(msg.blob)
+        };
+      }
+      return msg;
+    });
+
+    return enrichedMessages;
   }
 );
 
@@ -18,12 +35,26 @@ export const chatSlice = createSlice({
   },
   reducers: {
     addMessage: (state, action) => {
-      state.messages.push(action.payload);
-      addMessageToDB(action.payload);
+      const message = action.payload;
+
+      if (message.type === 'voice' && message.blob) {
+        message.blobUrl = URL.createObjectURL(message.blob);
+      }
+
+      else if (message.type === 'photo' && message.blob) {
+        message.blobUrl = URL.createObjectURL(message.blob);
+      }
+
+      state.messages.push(message);
+      addMessageToDB(message);
     },
     clearMessages: (state) => {
       state.messages = [];
       clearMessagesFromDB();
+    },
+    deleteMessage: (state, action) => {
+      state.messages = state.messages.filter(msg => msg.timestamp !== action.payload);
+      deleteMessageFromDB(action.payload); 
     }
   },
   extraReducers: (builder) => {
@@ -43,5 +74,5 @@ export const chatSlice = createSlice({
   }
 });
 
-export const { addMessage, clearMessages } = chatSlice.actions;
+export const { addMessage, clearMessages, deleteMessage } = chatSlice.actions;
 export default chatSlice.reducer;

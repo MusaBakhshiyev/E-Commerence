@@ -32,7 +32,7 @@ export default function Cart() {
           <div className={style.products}>
             <div className={style.cart_info}>
               <h1>Səbət - {totalCount} məhsul</h1>
-              <button onClick={() => dispatch(clearCart())}> <span><MdDeleteForever /> </span><span>Səbəti sil</span></button>
+              <button onClick={() => dispatch(clearCart())}> <span><MdDeleteForever /> </span> <span>Səbəti sil</span> </button>
             </div>
             {cartItems.map((p) => (
               <div className={style.product} key={p.id}>

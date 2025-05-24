@@ -43,7 +43,7 @@ export default function NewProducts() {
       </div>
 
 
-      <Swiper className={`${style.products} products-swiper`}
+      <Swiper className={`${style.products} products-swiper-new`}
         modules={[Navigation, Pagination, Scrollbar, Autoplay, A11y]}
         slidesPerView={3}
         spaceBetween={20}

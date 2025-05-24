@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import style from './Compare.module.css';
 import { useSelector } from 'react-redux';
 import ProductCard from '../../components/ProductCard';
@@ -16,35 +16,53 @@ export default function Compare() {
     const compareItems = useSelector(state => state.compare.items);
     const categories = compareItems.map(item => item.category);
     const uniqueCategories = [...new Set(categories)];
+    const [selectedCategory, setSelectedCategory] = useState(uniqueCategories[0]);
     return (
         <section className={style.compare_section}>
             <div className={style.compare}>
 
 
-                <div className={style.products}>
-                    <Swiper className={`products-swiper`}
+                <div className={style.compare_products}>
+                    <div className={style.categories}>
+                        {uniqueCategories.map((c) => (
+                            <button onClick={() => setSelectedCategory(c)} className={`${style.category} ${c == selectedCategory ? style.isActive : ""}`} key={c}>
+                                <h2>{c}</h2>
+                            </button>
+                        ))}
+                    </div>
+                    <Swiper className={`products-swiper-compare`}
                         modules={[Navigation, Pagination, Scrollbar, Autoplay, A11y]}
                         slidesPerView={2}
                         spaceBetween={0}
                         loop={true}
                         autoplay={{ delay: 3000, disableOnInteraction: true }}
                         breakpoints={{
-                            320: {
+                            0: {
                                 slidesPerView: 1,
                             },
-                            850: {
+                            700: {
+                                slidesPerView: 1.5,
+                                spaceBetween: 15,
+                            },
+                            780: {
                                 slidesPerView: 2,
-                                spaceBetween: 20,
+                                spaceBetween: 15,
+                            },
+                            1000: {
+                                slidesPerView: 2.5,
+                                spaceBetween: 15,
                             },
                             1200: {
                                 slidesPerView: 3,
-                                spaceBetween: 30,
+                                spaceBetween: 10,
                             },
                         }}
                     >
-                        {compareItems.map((p) => (
+                        {compareItems.filter(i => i.category == selectedCategory).map((p) => (
                             <SwiperSlide className={style.product} key={p.id}>
-                                <ProductCard product={p} />
+                                <div className={style.products}>
+                                    <ProductCard product={p} />
+                                </div>
                                 <div className={style.product_info}>
                                     <h2>{p.brand}</h2>
                                     <h2>{p.weight} kq</h2>
@@ -62,8 +80,11 @@ export default function Compare() {
                 <div className={style.compare_header}>
                     <div className={style.categories}>
                         {uniqueCategories.map((c) => (
-                            <button className={style.category} key={c}>
-                                <h2>{c}</h2>
+                            <button onClick={() => setSelectedCategory(c)} className={`${style.category} ${c == selectedCategory ? style.isActive : ""}`} key={c}>
+                               {c=="laptops"&& <h2>notbuklar</h2>}
+                               {c=="smartphones"&& <h2>smartfonlar</h2>}
+                               {c=="televisions"&& <h2>televizorlar</h2>}
+                                
                             </button>
                         ))}
                     </div>
