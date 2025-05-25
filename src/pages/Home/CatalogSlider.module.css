@@ -1,6 +1,5 @@
 .catalog_slider{
     display: flex;
-    margin-top: 20px;
     justify-content: space-between;
 }
 .slider{
@@ -32,11 +31,15 @@
 
 
 .catalog ul li span:first-child{
-    font-size: 22px;
+    font-size: clamp(18px,2vw,26px);
+}
+
+.catalog ul li span:nth-child(2){
+    font-size: clamp(16px,2vw,20px);
 }
 
 .catalog ul li span:last-child{
-    font-size: 18px;
+    font-size: clamp(16px,2vw,22px);
 }
 
 @media (max-width: 850px) {

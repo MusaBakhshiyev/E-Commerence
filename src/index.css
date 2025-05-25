@@ -19,7 +19,7 @@ html, body, #root {
 }
 
 main{
-  padding: 30px var(--sitePadding);
+  padding: 35px var(--sitePadding);
 }
 
 .container {

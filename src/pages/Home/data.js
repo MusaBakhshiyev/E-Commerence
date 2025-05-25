@@ -13,7 +13,7 @@ const data = [
     dimensions: { width: 112, height: 65, depth: 8 },
     availabilityStatus: "In Stock",
     reviews: [],
-    meta: { createdAt: "2025-05-01T10:00:00Z", updatedAt: "2025-05-01T10:00:00Z" },
+    meta: { createdAt: "2025-04-01T10:00:00Z", updatedAt: "2025-05-02T10:00:00Z" },
     images: [
       "https://irshad.az/cdn-cgi/image/width=315/storage/products/103126/taubeyeniftv.png",
       "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32taube-32taube-32asas.png",

@@ -78,7 +78,7 @@ export default function Header() {
 
 
             <div className={style.header2}>
-                <img src={logo} alt="logo" />
+                <img onClick={()=>navigate("/")} src={logo} alt="logo" />
                 <div className={style.search}>
                     <input placeholder='axtarın (ən az 2 hərf)' value={searchText} onChange={(e) => setSearchText(e.target.value.trimStart().replaceAll(/\s{2,}/g, ' '))} type="text" />
                     <button onClick={search}><BsSearch /><span>Axtar</span></button>

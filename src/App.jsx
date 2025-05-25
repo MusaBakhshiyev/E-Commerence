@@ -12,6 +12,7 @@ import Detail from './pages/Detail/Detail'
 import Category from './pages/Category/Category'
 import News from './pages/News/News'
 import Stores from './pages/Stores/Stores'
+import About from './pages/About/About'
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
             <Route path='/news' element={<News />} />
             <Route path='/news' element={<News />} />
             <Route path='/stores' element={<Stores />} />
+            <Route path='/about' element={<About />} />
           </Routes>
         </main>
         <Footer />

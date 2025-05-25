@@ -9,6 +9,7 @@ export default function Category() {
     const location = useLocation();
     const category = location.state?.category;
     const [products, setProducts] = useState([]);
+    const [order, setOrder] = useState("priceUp");
 
     useEffect(() => {
         if (category === "laptops" || category === "smartphones") {
@@ -25,10 +26,35 @@ export default function Category() {
 
     }, [category]);
 
+
+    useEffect(() => {
+        if (order == "priceUp") {
+            setProducts(prev => prev.sort((a,b)=>a.price-b.price));
+            console.log("up");
+        }
+        else if (order == "priceDown") {
+            setProducts(prev => prev.sort((a,b)=>b.price-a.price));
+            console.log("down");
+        }
+        if (order == "discount") {
+            setProducts(prev => prev.sort((a,b)=>b.discountPercentage-a.discountPercentage));
+        }
+        if (order == "time") {
+            setProducts(prev => prev.sort((a,b)=>new Date(b.meta.createdAt)-new Date(a.meta.createdAt)));
+        }
+
+    }, [order])
+
     return (
         <section className={style.category_section}>
+            <select className={style.orders}>
+                <option onClick={(e) => setOrder(e.value)} value="priceUp">Qiymət (artan sıra ilə)</option>
+                <option onClick={(e) => setOrder(e.value)} value="priceDown">Qiymət (azalan sıra ilə)</option>
+                <option onClick={(e) => setOrder(e.value)} value="discount">Endirimli məhsullar</option>
+                <option onClick={(e) => setOrder(e.value)} value="time">Yeni məhsullar</option>
+            </select>
             <div className={style.products}>
-                {products.length > 0 && products.map(p=>
+                {products.length > 0 && products.map(p =>
                     <div key={p.id} className={style.product}>
                         <ProductCard product={p} />
                     </div>

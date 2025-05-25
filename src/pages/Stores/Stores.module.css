@@ -11,6 +11,10 @@
   padding: 10px;
 }
 
+.store_list h2{
+  font-size: clamp(14px,2.5vw,24px);
+}
+
 .store_list ul {
   list-style: none;
   padding: 0;

@@ -15,7 +15,7 @@ header {
   border-bottom: 1px solid rgb(194, 194, 194);
 }
 
-.pages{
+.pages {
   display: flex;
   align-items: center;
   gap: min(20px, 1.5vw);
@@ -54,6 +54,7 @@ header {
 .header2 img {
   width: 10vw;
   min-width: min(110px, 20vw);
+  cursor: pointer;
 }
 
 .header2 .search {
@@ -184,23 +185,37 @@ header {
   z-index: 10;
   width: 30vw;
   padding: 15px;
-  transform: all 5s ease;
   border: 1px solid #f17a17;
   border-radius: 10px;
+  animation: openMenu 0.3s linear;
+}
+
+@keyframes openMenu {
+  from {
+    top: 0;
+    scale: 0.5;
+    transform: translateX(15vw);
+  }
+
+  to {
+    top: 150%;
+    scale: 1;
+     transform: translateX(0px);
+  }
 }
 
 .catalogs ul {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  font-size: clamp(12px, 1.5vw, 24px);
+  font-size: clamp(12px, 2vw, 22px);
 }
 
 .catalogs ul li {
   display: flex;
   gap: 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
   align-items: center;
 }
 
@@ -233,13 +248,26 @@ header {
   }
 }
 
+@media (max-width:630px) {
+  .catalogs {
+    width: 40vw;
+  }
+}
+
+@media (max-width:470px) {
+
+  .catalogs {
+    width: 55vw;
+  }
+}
+
 @media (max-width: 460px) {
 
-  .header2 .search button span:last-child{
+  .header2 .search button span:last-child {
     display: none;
   }
 
-  .catalog span:last-child{
+  .catalog span:last-child {
     display: none;
   }
 
