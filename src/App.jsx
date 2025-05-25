@@ -9,6 +9,9 @@ import Compare from './pages/Compare/Compare'
 import Contact from './pages/Contact/Contact'
 import Search from './pages/Search/Search'
 import Detail from './pages/Detail/Detail'
+import Category from './pages/Category/Category'
+import News from './pages/News/News'
+import Stores from './pages/Stores/Stores'
 
 function App() {
 
@@ -25,6 +28,10 @@ function App() {
             <Route path='/compare' element={<Compare />} />
             <Route path='/search' element={<Search />} />
             <Route path='/detail' element={<Detail />} />
+            <Route path='/category' element={<Category />} />
+            <Route path='/news' element={<News />} />
+            <Route path='/news' element={<News />} />
+            <Route path='/stores' element={<Stores />} />
           </Routes>
         </main>
         <Footer />

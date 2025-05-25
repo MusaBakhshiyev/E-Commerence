@@ -52,26 +52,28 @@ export default function Header() {
     return (
         <header>
             <div className={style.header1}>
-                <NavLink to='/'>
-                    <span><IoHomeOutline /></span>
-                    <span>Ana səhifə</span>
-                </NavLink >
-                <NavLink>
-                    <span><IoNewspaperOutline /></span>
-                    <span>Xəbərlər</span>
-                </NavLink>
-                <NavLink to='/contact'>
-                    <span><GrContact /></span>
-                    <span>Əlaqə</span>
-                </NavLink>
-                <NavLink>
-                    <span><IoStorefrontOutline /></span>
-                    <span>Mağazalar</span>
-                </NavLink>
-                <NavLink>
-                    <span><GrMapLocation /></span>
-                    <span>Baş ofis</span>
-                </NavLink>
+                <div className={style.pages}>
+                    <NavLink to='/'>
+                        <span><IoHomeOutline /></span>
+                        <span>Ana səhifə</span>
+                    </NavLink >
+                    <NavLink to="/news">
+                        <span><IoNewspaperOutline /></span>
+                        <span>Xəbərlər</span>
+                    </NavLink>
+                    <NavLink to='/contact'>
+                        <span><GrContact /></span>
+                        <span>Əlaqə</span>
+                    </NavLink>
+                    <NavLink to='/stores'>
+                        <span><IoStorefrontOutline /></span>
+                        <span>Mağazalar</span>
+                    </NavLink>
+                    <NavLink>
+                        <span><GrMapLocation /></span>
+                        <span>Baş ofis</span>
+                    </NavLink>
+                </div>
             </div>
 
 
@@ -91,7 +93,7 @@ export default function Header() {
 
                     <div className={`${style.catalogs} ${isCatalogOpen ? style.catalogs_show : style.catalogs_hide}`}>
                         <ul>
-                            <li>
+                            <li onClick={() => { setIsCatalogOpen(false); navigate("/category", { state: { category: "laptops" } }) }}>
                                 <span><MdComputer /></span>
                                 <span>Notbuklar</span>
                                 <span><FaRegArrowAltCircleRight /></span>
@@ -101,7 +103,7 @@ export default function Header() {
                                 <span>Personal Kompüterlər</span>
                                 <span><FaRegArrowAltCircleRight /></span>
                             </li>
-                            <li>
+                            <li onClick={() => { setIsCatalogOpen(false); navigate("/category", { state: { category: "smartphones" } }) }}>
                                 <span><SlScreenSmartphone /></span>
                                 <span>Smartfonlar</span>
                                 <span><FaRegArrowAltCircleRight /></span>
@@ -111,7 +113,7 @@ export default function Header() {
                                 <span>Panşetlər</span>
                                 <span><FaRegArrowAltCircleRight /></span>
                             </li>
-                            <li>
+                            <li onClick={() => { setIsCatalogOpen(false); navigate("/category", { state: { category: "televisions" } }) }}>
                                 <span><IoTvOutline /></span>
                                 <span>Televizorlar</span>
                                 <span><FaRegArrowAltCircleRight /></span>

@@ -1,5 +1,6 @@
 import React from 'react'
 import style from "./CatalogSlider.module.css"
+import { useNavigate } from 'react-router-dom';
 import { MdComputer } from "react-icons/md";
 import { FaComputer } from "react-icons/fa6";
 import { SlScreenSmartphone } from "react-icons/sl";
@@ -16,6 +17,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 export default function CatalogSlider() {
+    const navigate = useNavigate();
+
     const data = [
         {
             id: 1,
@@ -48,7 +51,7 @@ export default function CatalogSlider() {
 
             <div className={style.catalog}>
                 <ul>
-                    <li>
+                    <li onClick={()=>navigate("/category",{state:{category : "laptops"}})}>
                         <span><MdComputer /></span>
                         <span>Notbuklar</span>
                         <span><FaRegArrowAltCircleRight /></span>
@@ -58,7 +61,7 @@ export default function CatalogSlider() {
                         <span>Personal Kompüterlər</span>
                         <span><FaRegArrowAltCircleRight /></span>
                     </li>
-                    <li>
+                    <li onClick={()=>navigate("/category",{state:{category : "smartphones"}})}>
                         <span><SlScreenSmartphone /></span>
                         <span>Smartfonlar</span>
                         <span><FaRegArrowAltCircleRight /></span>
@@ -68,7 +71,7 @@ export default function CatalogSlider() {
                         <span>Panşetlər</span>
                         <span><FaRegArrowAltCircleRight /></span>
                     </li>
-                    <li>
+                    <li onClick={()=>navigate("/category",{state:{category : "televisions"}})}>
                         <span><IoTvOutline /></span>
                         <span>Televizorlar</span>
                         <span><FaRegArrowAltCircleRight /></span>

@@ -12,13 +12,18 @@
     gap: 10px;
 }
 
+.company h1{
+    font-size: clamp(12px,4vw,32px);
+}
+
 .company p{
     text-decoration: underline;
     cursor: pointer;
+    font-size: clamp(10px,2.5vw,20px);
 }
 
 .company img{
-    width: 140px;
+    width: min(140px,20vw);
     background-color: white;
     border-radius: 10px;
     padding: 15px 0;
@@ -30,9 +35,14 @@
     gap: 10px;
 }
 
+.support h1{
+    font-size: clamp(12px,4vw,32px);
+}
+
 .support p{
     text-decoration: underline;
     cursor: pointer;
+  font-size: clamp(10px,2.5vw,20px);
 }
 
 
@@ -42,7 +52,11 @@
     gap: 10px;
 }
 
+.contact h1{
+    font-size: clamp(12px,4vw,32px);
+}
+
 .contact p{
     cursor: pointer;
-    font-size: 46px;
+    font-size: clamp(28px,5vw,46px);
 }

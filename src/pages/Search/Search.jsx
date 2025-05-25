@@ -13,25 +13,38 @@ export default function Search() {
 
     useEffect(() => {
         const fetchProducts = async () => {
-            const res1 = await fetch('https://dummyjson.com/products/category/laptops');
-            const data1 = await res1.json();
+            let laptops = [];
+            let smartphones = [];
 
-            const res2 = await fetch('https://dummyjson.com/products/category/smartphones');
-            const data2 = await res2.json();
+            try {
+                const res1 = await fetch('https://dummyjson.com/products/category/laptops');
+                const data1 = await res1.json();
+                laptops = data1.products;
+            } catch (error) {
+                console.warn("Failed to fetch laptops, using local data.");
+            }
 
-            const allProducts = ([...data, ...data1.products, ...data2.products]);
-            const items = allProducts.filter(p => p.title.toLowerCase().includes(title));
+            try {
+                const res2 = await fetch('https://dummyjson.com/products/category/smartphones');
+                const data2 = await res2.json();
+                smartphones = data2.products;
+            } catch (error) {
+                console.warn("Failed to fetch smartphones, using local data.");
+            }
+
+            const allProducts = [...data, ...laptops, ...smartphones];
+            const items = allProducts.filter(p => p.title.toLowerCase().includes(title.toLowerCase()));
 
             const categorySet = Array.from(new Set(items.map(p => p.category)));
 
             setUniqueCategories(categorySet);
             setSelectedCategory(categorySet[0]);
-
             setProducts(items);
         };
-        fetchProducts();
 
+        fetchProducts();
     }, [title]);
+
 
     return (
         <section className={style.search_container}>

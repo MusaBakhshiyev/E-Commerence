@@ -13,7 +13,7 @@ import 'swiper/css/scrollbar';
 
 export default function NewProducts() {
   const [products, setProducts] = useState([]);
-  const [category, setCategory] = useState("laptops");
+  const [category, setCategory] = useState("televisions");
 
   useEffect(() => {
     if (category === "laptops" || category === "smartphones") {
@@ -37,9 +37,9 @@ export default function NewProducts() {
     <section className={style.newproducts}>
       <h2>Yeni Məhsullar</h2>
       <div className={style.categories}>
+        <button onClick={() => setCategory("televisions")} className={category === "televisions" ? style.isActive : ""}>Telovizorlar</button>
         <button onClick={() => setCategory("laptops")} className={category === "laptops" ? style.isActive : ""}>Notbuklar</button>
         <button onClick={() => setCategory("smartphones")} className={category === "smartphones" ? style.isActive : ""}>Smartfonlar</button>
-        <button onClick={() => setCategory("televisions")} className={category === "televisions" ? style.isActive : ""}>Telovizorlar</button>
       </div>
 
 

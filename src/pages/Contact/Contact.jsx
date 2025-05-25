@@ -48,7 +48,7 @@ export default function Contact() {
     const handleRightClick = (e, timestamp) => {
         e.preventDefault();
 
-        const confirmDelete = window.confirm("Do you want to delete this message?");
+        const confirmDelete = window.confirm("Mesajı silmək istəyirsiniz?");
         if (confirmDelete) {
             dispatch(deleteMessage(timestamp));
         }
@@ -90,7 +90,7 @@ export default function Contact() {
                                     onTouchEnd={cancelHoldToDelete}
                                 >
                                     {msg.type === 'text' && <p>{msg.text}</p>}
-                                    {msg.type === 'voice' && <audio controls src={msg.blobUrl} />}
+                                    {msg.type === 'voice' && <audio  controls src={msg.blobUrl} />}
                                     {msg.type === 'photo' && <img src={msg.blobUrl} alt="photo" className={style.photo} />}
                                 </div>
                             ))}

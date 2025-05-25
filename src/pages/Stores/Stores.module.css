@@ -1,0 +1,38 @@
+.stores_container {
+  display: flex;
+  gap: 20px;
+  height: 35vw;
+}
+
+.store_list {
+  width: 30%;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.store_list ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 5px;
+}
+
+.store_list li {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #f17a17;
+  color: white;
+  border-bottom: 1px solid #ddd;
+  opacity: 0.8;
+  font-size: clamp(12px,2vw,18px);
+}
+
+.store_list li:hover,
+.store_list .active {
+  opacity: 1;
+}
+
+.map_view {
+  flex: 1;
+  border: 2px solid #ccc;
+}
