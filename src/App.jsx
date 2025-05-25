@@ -17,7 +17,7 @@ import About from './pages/About/About'
 function App() {
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/E-Commerence/'>
       <div className="container">
         <Header />
         <main>
