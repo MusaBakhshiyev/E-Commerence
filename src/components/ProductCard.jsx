@@ -76,6 +76,7 @@ export default function ProductCard({ product }) {
                                 <img
                                     className={product.category === "smartphones" ? style.scale : style.enlarge}
                                     src={img}
+                                    alt="image"
                                 />
                             </SwiperSlide>
                         ))}
