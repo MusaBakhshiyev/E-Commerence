@@ -16,9 +16,11 @@ export default function PhotoCapture() {
             navigator.mediaDevices.getUserMedia({ video: true })
                 .then((stream) => {
                     videoRef.current.srcObject = stream;
+                    setIsCameraOn(true);
                 })
                 .catch((err) => {
                     alert('Camera access denied: ' + err.message);
+                    setIsCameraOn(false);
                 });
         }
         return () => {
@@ -71,7 +73,7 @@ export default function PhotoCapture() {
                     <button onClick={stopCamera} className={style.exit_camera}><FaTimes /></button>
                     <button onClick={takePhoto} className={style.take_button}><FaCameraRetro /></button>
                 </div>
-                
+
             )}
             <canvas ref={canvasRef} style={{ display: 'none' }} />
         </div>

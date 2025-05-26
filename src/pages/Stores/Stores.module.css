@@ -11,8 +11,8 @@
   padding: 10px;
 }
 
-.store_list h2{
-  font-size: clamp(14px,2.5vw,24px);
+.store_list h2 {
+  font-size: clamp(14px, 2.5vw, 24px);
 }
 
 .store_list ul {
@@ -28,7 +28,7 @@
   color: white;
   border-bottom: 1px solid #ddd;
   opacity: 0.8;
-  font-size: clamp(12px,2vw,18px);
+  font-size: clamp(12px, 2vw, 18px);
 }
 
 .store_list li:hover,
@@ -39,4 +39,23 @@
 .map_view {
   flex: 1;
   border: 2px solid #ccc;
+}
+
+
+@media (max-width:650px) {
+  .stores_container {
+    flex-direction: column;
+    height: 80vh;
+  }
+
+  .store_list {
+    width: 100%;
+  }
+
+  .store_list ul {
+   display: flex;
+  }
+
+
+
 }

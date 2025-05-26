@@ -16,42 +16,46 @@ export default function Category() {
             fetch(`https://dummyjson.com/products/category/${category}`)
                 .then((res) => res.json())
                 .then((data) => {
-                    setProducts(data.products);
+                    setProducts(data.products.sort((a, b) => a.price - b.price));
                 });
         }
         else {
             const filteredProducts = data.filter((product) => product.category === category);
-            setProducts(filteredProducts);
+            setProducts(filteredProducts.sort((a, b) => a.price - b.price));
         }
 
     }, [category]);
 
 
     useEffect(() => {
-        if (order == "priceUp") {
-            setProducts(prev => prev.sort((a,b)=>a.price-b.price));
-            console.log("up");
-        }
-        else if (order == "priceDown") {
-            setProducts(prev => prev.sort((a,b)=>b.price-a.price));
-            console.log("down");
-        }
-        if (order == "discount") {
-            setProducts(prev => prev.sort((a,b)=>b.discountPercentage-a.discountPercentage));
-        }
-        if (order == "time") {
-            setProducts(prev => prev.sort((a,b)=>new Date(b.meta.createdAt)-new Date(a.meta.createdAt)));
-        }
+        setProducts((prev) => {
+            const sorted = [...prev]; 
 
-    }, [order])
+            if (order === "priceUp") {
+                sorted.sort((a, b) => a.price - b.price);
+            } else if (order === "priceDown") {
+                sorted.sort((a, b) => b.price - a.price);
+            } else if (order === "discount") {
+                sorted.sort((a, b) => b.discountPercentage - a.discountPercentage);
+            } else if (order === "time") {
+                sorted.sort((a, b) => new Date(b.meta.createdAt) - new Date(a.meta.createdAt));
+            }
+
+            return sorted;
+        });
+    }, [order]);
 
     return (
         <section className={style.category_section}>
-            <select className={style.orders}>
-                <option onClick={(e) => setOrder(e.value)} value="priceUp">Qiymət (artan sıra ilə)</option>
-                <option onClick={(e) => setOrder(e.value)} value="priceDown">Qiymət (azalan sıra ilə)</option>
-                <option onClick={(e) => setOrder(e.value)} value="discount">Endirimli məhsullar</option>
-                <option onClick={(e) => setOrder(e.value)} value="time">Yeni məhsullar</option>
+            <select
+                className={style.orders}
+                onChange={(e) => setOrder(e.target.value)}
+                value={order}
+            >
+                <option value="priceUp">Qiymət (artan sıra ilə)</option>
+                <option value="priceDown">Qiymət (azalan sıra ilə)</option>
+                <option value="discount">Endirimli məhsullar</option>
+                <option value="time">Yeni məhsullar</option>
             </select>
             <div className={style.products}>
                 {products.length > 0 && products.map(p =>

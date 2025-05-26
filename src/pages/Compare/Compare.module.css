@@ -13,6 +13,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap:20px;
 }
 
 .compare_products {
@@ -76,7 +77,7 @@
     background-color: #f17a17;
     padding: min(10px, 0.7em);
     border-radius: min(10px, 0.5em);
-    font-size: clamp(8px, 1.2vw, 16px);
+    font-size: clamp(8px, 2vw, 16px);
     opacity: 0.7;
     cursor: pointer;
 }
@@ -88,6 +89,10 @@
 .isActive {
     outline: 2px solid #0b1836;
     opacity: 1;
+}
+
+.empty{
+    font-size: clamp(16px,5vw,32px);
 }
 
 

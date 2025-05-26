@@ -29,6 +29,28 @@
 
 .detail h2 {
     font-size: clamp(12px, 2vw, 28px);
+    display: flex;
+    align-items: center;
+    gap:2px;
+}
+
+.detail h2 span{
+    font-size: clamp(12px, 2vw, 28px);
+    display: flex;
+    align-items: center;
+    color: #f17a17;
+}
+
+button.order {
+    font-size: clamp(16px, 2.2vw, 20px);
+    font-weight: 700;
+    margin-top: 20px;
+    background-color: #f17a17;
+    color: white;
+    padding: min(10px, 0.5em);
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
 }
 
 

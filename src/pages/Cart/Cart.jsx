@@ -4,10 +4,12 @@ import { useSelector } from 'react-redux';
 import { MdDeleteForever } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { removeFromCart, updateCart, clearCart } from "../../redux/cartSlice.js";
+import { useNavigate } from 'react-router-dom';
 
 export default function Cart() {
   const dispatch = useDispatch();
   const cartItems = useSelector(state => state.cart.items);
+  const navigate = useNavigate();
 
   const totalCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
@@ -27,7 +29,7 @@ export default function Cart() {
   return (
 
     <section className={style.cart_section}>
-      {cartItems.length > 0 && (
+      {cartItems.length > 0 ? (
         <div className={style.cart}>
           <div className={style.products}>
             <div className={style.cart_info}>
@@ -38,12 +40,12 @@ export default function Cart() {
               <div className={style.product} key={p.id}>
                 <img src={p.images[0]} alt="image" />
                 <div className={style.info}>
-                  <h2>{p.title}</h2>
+                  <h2 onClick={() => navigate("/detail",{state:{product:p}})}>{p.title}</h2>
                   <div className={style.change_count}>
                     <div className={style.count}>
                       <span onClick={() => handleUpdateCart(p, p.quantity - 1)}>-</span>
                       <span>{p.quantity}</span>
-                      <span onClick={() => handleUpdateCart(p, p.quantity + 1)}>+</span>
+                      <span onClick={() => handleUpdateCart(p, p.quantity + 1 <= 10 ? p.quantity + 1 : 10)}>+</span>
                     </div>
                     <div className={style.price}>
                       <h1>{(p.quantity * ((p.price - p.price * p.discountPercentage / 100).toFixed(2))).toFixed(2)} AZN</h1>
@@ -69,7 +71,7 @@ export default function Cart() {
             </div>
             <button className={style.total_price}>Ümumi məbləğ:	{totalPrice} AZN</button>
 
-            <button className={style.order}>Sifarişi rəsmiləşdir</button>
+            <button onClick={()=>navigate("/order",{state:{totalPrice:totalPrice}})} className={style.order}>Sifarişi rəsmiləşdir</button>
           </div>
 
 
@@ -78,7 +80,7 @@ export default function Cart() {
 
 
 
-      )}
+      ):<span className={style.empty}>⨂ Səbət Boşdur ⨂</span>}
     </section>
   )
 }

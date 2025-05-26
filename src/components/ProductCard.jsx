@@ -50,7 +50,7 @@ export default function ProductCard({ product }) {
     }
 
     return (
-        <div className={style.product} onClick={() => navigate("/detail",{state:{product:product}})}>
+        <div className={style.product} onClick={() => navigate("/detail", { state: { product: product } })}>
             <div className={style.favorite_scale}>
                 {cartItems.some(p => p.id == product.id) ? <span onClick={(e) => { e.stopPropagation(); navigate("/cart") }} className={style.go_cart}><span><TbShoppingCartCopy /></span> <span>Səbətə keç</span></span> : <span></span>}
 
@@ -112,7 +112,7 @@ export default function ProductCard({ product }) {
                 <div onClick={(e) => { e.stopPropagation() }} className={style.count}>
                     <span onClick={() => setCount(c => (c - 1) == 0 ? 1 : (c - 1))}>-</span>
                     <span>{count}</span>
-                    <span onClick={() => setCount(c => c + 1)}>+</span>
+                    <span onClick={() => setCount(c => c + 1 <= 10 ? c + 1 : 10)}>+</span>
                 </div>
                 <button onClick={(e) => { e.stopPropagation(); handleAddToCart(product, count) }}>
                     <span><TbShoppingCartPlus /></span> Səbətə əlavə et

@@ -20,12 +20,12 @@ export default function NewProducts() {
       fetch(`https://dummyjson.com/products/category/${category}`)
         .then((res) => res.json())
         .then((data) => {
-          setProducts(data.products);
+          setProducts(data.products.sort((a, b) => new Date(b.meta.createdAt) - new Date(a.meta.createdAt)));
         });
     }
     else {
       const filteredProducts = data.filter((product) => product.category === category);
-      setProducts(filteredProducts);
+      setProducts(filteredProducts.sort((a, b) => new Date(b.meta.createdAt) - new Date(a.meta.createdAt)));
     }
 
   }, [category]);

@@ -17,7 +17,8 @@
 
 .images{
     width: 100%;
-    height: 35vw;    
+    height: 35vw;   
+    margin-top: 20px; 
 }
 
 .images img{

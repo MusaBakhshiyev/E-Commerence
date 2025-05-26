@@ -2,9 +2,8 @@ import logo from '../images/logo.png'
 import style from "./Header.module.css"
 import { IoNewspaperOutline } from "react-icons/io5";
 import { GrContact } from "react-icons/gr";
-import { TbTruckDelivery } from "react-icons/tb";
-import { IoStorefrontOutline } from "react-icons/io5";
 import { GrMapLocation } from "react-icons/gr";
+import { RiInfoCardLine } from "react-icons/ri";
 import { BsSearch } from "react-icons/bs";
 import { RiScales3Line } from "react-icons/ri";
 import { RiHeartAdd2Line } from "react-icons/ri";
@@ -65,20 +64,20 @@ export default function Header() {
                         <span><GrContact /></span>
                         <span>Əlaqə</span>
                     </NavLink>
-                    <NavLink to='/stores'>
-                        <span><IoStorefrontOutline /></span>
-                        <span>Mağazalar</span>
+                    <NavLink to='/about'>
+                        <span><RiInfoCardLine /></span>
+                        <span>Haqqımızda</span>
                     </NavLink>
-                    <NavLink>
-                        <span><GrMapLocation /></span>
-                        <span>Baş ofis</span>
+                    <NavLink to='/stores'>
+                        <span><GrMapLocation/></span>
+                        <span>Mağazalar</span>
                     </NavLink>
                 </div>
             </div>
 
 
             <div className={style.header2}>
-                <img onClick={()=>navigate("/")} src={logo} alt="logo" />
+                <img onClick={() => navigate("/")} src={logo} alt="logo" />
                 <div className={style.search}>
                     <input placeholder='axtarın (ən az 2 hərf)' value={searchText} onChange={(e) => setSearchText(e.target.value.trimStart().replaceAll(/\s{2,}/g, ' '))} type="text" />
                     <button onClick={search}><BsSearch /><span>Axtar</span></button>

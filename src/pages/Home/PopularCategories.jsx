@@ -37,11 +37,11 @@ export default function PopularCategories() {
             }
         };
 
-        updateCounts(); 
+        updateCounts();
 
-        window.addEventListener('resize', updateCounts); 
+        window.addEventListener('resize', updateCounts);
 
-        return () => window.removeEventListener('resize', updateCounts); 
+        return () => window.removeEventListener('resize', updateCounts);
     }, []);
 
 
@@ -51,15 +51,24 @@ export default function PopularCategories() {
         const fetchProducts = async () => {
             if (category === 1) {
                 const localFiltered = data.filter(product => product.rating > 3);
+                let filteredLaptops = [];
+                let filteredSmartphones = [];
 
-                const res1 = await fetch('https://dummyjson.com/products/category/laptops');
-                const data1 = await res1.json();
+                try {
+                    const res1 = await fetch('https://dummyjson.com/products/category/laptops');
+                    const data1 = await res1.json();
+                    filteredLaptops = data1.products.filter(p => p.rating > 3);
+                } catch (error) {
+                    console.warn("Failed to fetch laptops, using local data.");
+                }
 
-                const res2 = await fetch('https://dummyjson.com/products/category/smartphones');
-                const data2 = await res2.json();
-
-                const filteredLaptops = data1.products.filter(p => p.rating > 3);
-                const filteredSmartphones = data2.products.filter(p => p.rating > 3);
+                try {
+                    const res2 = await fetch('https://dummyjson.com/products/category/smartphones');
+                    const data2 = await res2.json();
+                    filteredSmartphones = data2.products.filter(p => p.rating > 3);
+                } catch (error) {
+                    console.warn("Failed to fetch smartphones, using local data.");
+                }
 
                 const allProducts = ([...localFiltered, ...filteredLaptops, ...filteredSmartphones]);
                 setProducts(allProducts.sort((a, b) => a.rating - b.rating));
@@ -68,14 +77,25 @@ export default function PopularCategories() {
             else if (category === 2) {
                 const localFiltered = data.filter(product => product.discountPercentage > 10.5);
 
-                const res1 = await fetch('https://dummyjson.com/products/category/laptops');
-                const data1 = await res1.json();
+                let filteredLaptops = [];
+                let filteredSmartphones = [];
 
-                const res2 = await fetch('https://dummyjson.com/products/category/smartphones');
-                const data2 = await res2.json();
+                try {
+                    const res1 = await fetch('https://dummyjson.com/products/category/laptops');
+                    const data1 = await res1.json();
+                    filteredLaptops = data1.products.filter(p => p.discountPercentage > 10.5);
 
-                const filteredLaptops = data1.products.filter(p => p.discountPercentage > 10.5);
-                const filteredSmartphones = data2.products.filter(p => p.discountPercentage > 10.5);
+                } catch (error) {
+                    console.warn("Failed to fetch laptops, using local data.");
+                }
+
+                try {
+                    const res2 = await fetch('https://dummyjson.com/products/category/smartphones');
+                    const data2 = await res2.json();
+                    filteredSmartphones = data2.products.filter(p => p.discountPercentage > 10.5);
+                } catch (error) {
+                    console.warn("Failed to fetch smartphones, using local data.");
+                }
 
                 const allProducts = ([...localFiltered, ...filteredLaptops, ...filteredSmartphones]);
                 setProducts(allProducts.sort((a, b) => a.discountPercentage - b.discountPercentage));
@@ -83,14 +103,25 @@ export default function PopularCategories() {
             else if (category === 3) {
                 const localFiltered = data.filter(product => product.price >= 1000);
 
-                const res1 = await fetch('https://dummyjson.com/products/category/laptops');
-                const data1 = await res1.json();
+                let filteredLaptops = [];
+                let filteredSmartphones = [];
 
-                const res2 = await fetch('https://dummyjson.com/products/category/smartphones');
-                const data2 = await res2.json();
+                try {
+                    const res1 = await fetch('https://dummyjson.com/products/category/laptops');
+                    const data1 = await res1.json();
+                    filteredLaptops = data1.products.filter(p => p.price >= 1000);
 
-                const filteredLaptops = data1.products.filter(p => p.price >= 1000);
-                const filteredSmartphones = data2.products.filter(p => p.price >= 1000);
+                } catch (error) {
+                    console.warn("Failed to fetch laptops, using local data.");
+                }
+
+                try {
+                    const res2 = await fetch('https://dummyjson.com/products/category/smartphones');
+                    const data2 = await res2.json();
+                    filteredSmartphones = data2.products.filter(p => p.price >= 1000);
+                } catch (error) {
+                    console.warn("Failed to fetch smartphones, using local data.");
+                }
 
                 const allProducts = ([...localFiltered, ...filteredLaptops, ...filteredSmartphones]);
                 setProducts(allProducts.sort((a, b) => b.price - a.price));
@@ -98,14 +129,25 @@ export default function PopularCategories() {
             else if (category === 4) {
                 const localFiltered = data.filter(product => product.price < 1000);
 
-                const res1 = await fetch('https://dummyjson.com/products/category/laptops');
-                const data1 = await res1.json();
+                let filteredLaptops = [];
+                let filteredSmartphones = [];
 
-                const res2 = await fetch('https://dummyjson.com/products/category/smartphones');
-                const data2 = await res2.json();
+                try {
+                    const res1 = await fetch('https://dummyjson.com/products/category/laptops');
+                    const data1 = await res1.json();
+                    filteredLaptops = data1.products.filter(p => p.price < 1000);
 
-                const filteredLaptops = data1.products.filter(p => p.price < 1000);
-                const filteredSmartphones = data2.products.filter(p => p.price < 1000);
+                } catch (error) {
+                    console.warn("Failed to fetch laptops, using local data.");
+                }
+
+                try {
+                    const res2 = await fetch('https://dummyjson.com/products/category/smartphones');
+                    const data2 = await res2.json();
+                    filteredSmartphones = data2.products.filter(p => p.price < 1000);
+                } catch (error) {
+                    console.warn("Failed to fetch smartphones, using local data.");
+                }
 
                 const allProducts = ([...localFiltered, ...filteredLaptops, ...filteredSmartphones]);
 

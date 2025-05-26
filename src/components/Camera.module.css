@@ -4,7 +4,7 @@
     color: white;
     border: none;
     border-radius: min(10px,0.5em);
-    font-size: clamp(12px, 1.5vw, 24px);
+    font-size: clamp(12px, 3vw, 24px);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -20,6 +20,14 @@
     position: absolute;
     bottom: 50px;
     right: 0;
+    background-color: white;
+}
+
+.permisson{
+    color: #f17a17;
+    font-size: clamp(12px,3vw,32px);
+    position: relative;
+    top: 50%;
 }
 
 .take_button {

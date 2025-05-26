@@ -15,7 +15,7 @@ export default function About() {
     return (
         <section className={style.about_container}>
             <h1>Şirkət haqqında</h1>
-            <p>GadGetAll şirkəti 25/05/2025 tarixində yaradılmış bir texnologiya mağazasıdır. Mağazamızda televizorlar, smartfonlar, notbuklar və digər məhsulları tapa bilərsiniz. </p>
+            <p>GadGetAll şirkəti 25/05/2025 tarixində yaradılmış bir texnologiya mağazasıdır. Mağazamızda televizorlar, smartfonlar, notbuklar və digər müasir elektronika məhsullarını tapa bilərsiniz. Müştərilərimizə ən son texnologiyaları təqdim etmək məqsədi ilə fəaliyyət göstəririk. Geniş məhsul çeşidimiz və sərfəli qiymət strategiyamız sayəsində, hər kəs üçün münasib bir texnologiya həlli təklif edirik.</p>
 
             <Swiper className={style.images}
                 modules={[EffectCoverflow]}

@@ -9,11 +9,11 @@ export default function Favorite() {
 
         <section className={style.favorite_section}>
             <div className={style.products}>
-                {favoriteItems.length > 0 && favoriteItems.map((p, i) => (
+                {favoriteItems.length > 0 ? (favoriteItems.map((p, i) => (
                     <div className={style.product}>
                         <ProductCard product={p} />
                     </div>
-                ))}
+                ))): <span className={style.empty}>⨂ Bəyəndim Qutusu Boşdur ⨂</span>}
             </div>
         </section>
     )

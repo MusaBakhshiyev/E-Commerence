@@ -3,7 +3,7 @@
     color: white;
     background-color: #f17a17;
     border-radius: min(10px,0.5em);
-    font-size: clamp(12px,1.5vw, 24px);
+    font-size: clamp(12px,3vw, 24px);
     display: flex;
     align-items: center;
     justify-content: center;

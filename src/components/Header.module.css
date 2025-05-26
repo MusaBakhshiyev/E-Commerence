@@ -8,7 +8,7 @@ header {
 .header1 {
   display: flex;
   align-items: center;
-  font-size: clamp(10px, 2.5vw, 18px);
+  font-size: clamp(10px, 2.8vw, 18px);
   height: 40px;
   padding: 0 var(--sitePadding);
   border-top: 1px solid rgb(194, 194, 194);
@@ -30,7 +30,12 @@ header {
   display: flex;
   align-items: center;
   gap: 5px;
+  cursor: pointer;
+}
 
+.header1 a span{
+  display: flex;
+  align-items: center;
 }
 
 .header1 a span:first-child {
@@ -102,7 +107,7 @@ header {
   font-size: clamp(12px, 1.2vw, 18px);
   background-image: linear-gradient(to right, #264aa0, #0b1836);
   padding: 0.8vw;
-  border-radius: 10px;
+  border-radius: min(10px,0.6em);
   display: flex;
   align-items: center;
   justify-content: center;

@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import style from './Stores.module.css';
 
 const locations = [
-    { id: 1, name: 'Baku Store', lat: 40.4093, lng: 49.8671 },
-    { id: 2, name: 'Ganja Store', lat: 40.6828, lng: 46.3606 },
-    { id: 3, name: 'Sumqayit Store', lat: 40.5914, lng: 49.639 },
+    { id: 1, name: '28 Mall', lat: 40.379111, lng: 49.846885 },
+    { id: 2, name: 'Gənclik Mall', lat: 40.4000039, lng: 49.852504 },
+    { id: 3, name: 'Crescent Mall', lat: 40.373398, lng: 49.8580775 },
 ];
 
 export default function Stores() {

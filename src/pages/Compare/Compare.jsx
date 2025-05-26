@@ -58,7 +58,7 @@ export default function Compare() {
                             },
                         }}
                     >
-                        {compareItems.filter(i => i.category == selectedCategory).map((p) => (
+                        {compareItems.length > 0 ? compareItems.filter(i => i.category == selectedCategory).map((p) => (
                             <SwiperSlide className={style.product} key={p.id}>
                                 <div className={style.products}>
                                     <ProductCard product={p} />
@@ -72,32 +72,34 @@ export default function Compare() {
                                     <h2>{p.dimensions.depth} sm</h2>
                                 </div>
                             </SwiperSlide>
-                        ))}
+                        )) : <span className={style.empty}>⨂ Müqayisə Qutusu Boşdur ⨂</span>}
                     </Swiper>
                 </div>
 
+                {compareItems.length > 0 &&
 
-                <div className={style.compare_header}>
-                    <div className={style.categories}>
-                        {uniqueCategories.map((c) => (
-                            <button onClick={() => setSelectedCategory(c)} className={`${style.category} ${c == selectedCategory ? style.isActive : ""}`} key={c}>
-                               {c=="laptops"&& <h2>notbuklar</h2>}
-                               {c=="smartphones"&& <h2>smartfonlar</h2>}
-                               {c=="televisions"&& <h2>televizorlar</h2>}
-                                
-                            </button>
-                        ))}
-                    </div>
-                    <div className={style.headers}>
-                        <h2>Brend</h2>
-                        <h2>Çəki</h2>
-                        <h2>Reytinq</h2>
-                        <h2>En</h2>
-                        <h2>Uzunluq</h2>
-                        <h2>Qalınlıq</h2>
-                    </div>
+                    <div className={style.compare_header}>
+                        <div className={style.categories}>
+                            {uniqueCategories.map((c) => (
+                                <button onClick={() => setSelectedCategory(c)} className={`${style.category} ${c == selectedCategory ? style.isActive : ""}`} key={c}>
+                                    {c == "laptops" && <h2>notbuklar</h2>}
+                                    {c == "smartphones" && <h2>smartfonlar</h2>}
+                                    {c == "televisions" && <h2>televizorlar</h2>}
 
-                </div>
+                                </button>
+                            ))}
+                        </div>
+                        <div className={style.headers}>
+                            <h2>Brend</h2>
+                            <h2>Çəki</h2>
+                            <h2>Reytinq</h2>
+                            <h2>En</h2>
+                            <h2>Uzunluq</h2>
+                            <h2>Qalınlıq</h2>
+                        </div>
+
+                    </div>
+                }
             </div>
         </section>
     )
