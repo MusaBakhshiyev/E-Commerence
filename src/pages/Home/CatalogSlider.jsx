@@ -8,6 +8,10 @@ import { SlScreenTablet } from "react-icons/sl";
 import { IoTvOutline } from "react-icons/io5";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 
+import Slide1 from "../../images/Slide1.png";
+import Slide2 from "../../images/Slide2.png";
+import Slide3 from "../../images/Slide3.png";
+
 import { Navigation, Pagination, Scrollbar, Autoplay, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -22,19 +26,19 @@ export default function CatalogSlider() {
     const data = [
         {
             id: 1,
-            img: "https://irshad.az/cdn-cgi/image/width=876/storage/pages/2596/sayt-cover-29.png",
+            img: Slide1,
             title: "image1"
         },
 
         {
             id: 2,
-            img: "https://irshad.az/cdn-cgi/image/width=876/storage/pages/2600/sayt-cover-1-4.png",
+            img: Slide2,
             title: "image2"
         },
 
         {
             id: 3,
-            img: "https://storage.irshad.az/components/sliders/sayt-cover-31-0.png",
+            img: Slide3,
             title: "image3"
         }
     ]
@@ -46,6 +50,7 @@ export default function CatalogSlider() {
                     pagination={{ clickable: true }}
                     scrollbar={{ draggable: true }}
                     autoplay={{ delay: 3000 }}
+                    grabCursor={true}
                     loop={true}
                 >
                     {data.map(d => (

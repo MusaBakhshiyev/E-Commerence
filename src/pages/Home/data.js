@@ -1,3 +1,20 @@
+import TV1 from "../../images/TV1.png";
+import TV2 from "../../images/TV2.png";
+import TV3 from "../../images/TV3.png";
+import TV4 from "../../images/TV4.png";
+import TV5 from "../../images/TV5.png";
+import TV6 from "../../images/TV6.png";
+import TV7 from "../../images/TV2.png";
+import TV8 from "../../images/TV8.png";
+import TV9 from "../../images/TV9.png";
+import TV10 from "../../images/TV10.png";
+import TV11 from "../../images/TV11.png";
+import TV12 from "../../images/TV12.png";
+
+import TVTop from "../../images/TVTop.png";
+import TVSide from "../../images/TVSide.png";
+
+
 const data = [
   {
     id: 201,
@@ -15,9 +32,9 @@ const data = [
     reviews: [],
     meta: { createdAt: "2025-04-01T10:00:00Z", updatedAt: "2025-05-02T10:00:00Z" },
     images: [
-      "https://irshad.az/cdn-cgi/image/width=315/storage/products/103126/taubeyeniftv.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32taube-32taube-32asas.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32-led-smart-tv.png"
+      TV1,
+      TVTop,
+      TVSide
     ]
   },
   {
@@ -36,9 +53,9 @@ const data = [
     reviews: [],
     meta: { createdAt: "2025-03-01T11:00:00Z", updatedAt: "2025-05-01T11:00:00Z" },
     images: [
-      "https://irshad.az/cdn-cgi/image/width=315/storage/products/103092/50p755.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32taube-32taube-32asas.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32-led-smart-tv.png"
+      TV2,
+      TVTop,
+      TVSide
     ]
   },
   {
@@ -57,9 +74,9 @@ const data = [
     reviews: [],
     meta: { createdAt: "2025-05-10T12:00:00Z", updatedAt: "2025-05-01T12:00:00Z" },
     images: [
-      "https://irshad.az/cdn-cgi/image/width=315/storage/products/102451/taube-32taube-32taube-32taube-32taube-32taube-32taube-32taube-32taube-32taube-32taube-32taube-32taube-32taube-32.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32taube-32taube-32asas.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32-led-smart-tv.png"
+      TV3,
+      TVTop,
+      TVSide
     ]
   },
   {
@@ -78,9 +95,9 @@ const data = [
     reviews: [],
     meta: { createdAt: "2025-05-18T13:00:00Z", updatedAt: "2025-05-01T13:00:00Z" },
     images: [
-      "https://irshad.az/cdn-cgi/image/width=315/storage/products/102222/c655-c655-c655-a.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32taube-32taube-32asas.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32-led-smart-tv.png"
+      TV4,
+      TVTop,
+      TVSide
     ]
   },
   {
@@ -99,9 +116,9 @@ const data = [
     reviews: [],
     meta: { createdAt: "2025-05-3T14:00:00Z", updatedAt: "2025-05-01T14:00:00Z" },
     images: [
-      "https://irshad.az/cdn-cgi/image/width=315/storage/products/101766/65c655asss.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32taube-32taube-32asas.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32-led-smart-tv.png"
+      TV5,
+      TVTop,
+      TVSide
     ]
   },
   {
@@ -120,9 +137,9 @@ const data = [
     reviews: [],
     meta: { createdAt: "2025-04-08T15:00:00Z", updatedAt: "2025-05-01T15:00:00Z" },
     images: [
-      "https://irshad.az/cdn-cgi/image/width=315/storage/products/101713/ue43du8500uxru.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32taube-32taube-32asas.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32-led-smart-tv.png"
+      TV6,
+      TVTop,
+      TVSide
     ]
   },
   {
@@ -141,9 +158,9 @@ const data = [
     reviews: [],
     meta: { createdAt: "2025-05-20T16:00:00Z", updatedAt: "2025-05-01T16:00:00Z" },
     images: [
-      "https://irshad.az/cdn-cgi/image/width=315/storage/products/101695/ue43du8500uxru.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32taube-32taube-32asas.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32-led-smart-tv.png"
+      TV7,
+      TVTop,
+      TVSide
     ]
   },
   {
@@ -162,9 +179,9 @@ const data = [
     reviews: [],
     meta: { createdAt: "2025-01-01T17:00:00Z", updatedAt: "2025-05-01T17:00:00Z" },
     images: [
-      "https://irshad.az/cdn-cgi/image/width=315/storage/products/101648/asaaaaaa8585858585855.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32taube-32taube-32asas.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32-led-smart-tv.png"
+      TV8,
+      TVTop,
+      TVSide
     ]
   },
   {
@@ -183,9 +200,9 @@ const data = [
     reviews: [],
     meta: { createdAt: "2025-05-05T18:00:00Z", updatedAt: "2025-05-01T18:00:00Z" },
     images: [
-      "https://irshad.az/cdn-cgi/image/width=315/storage/products/101259/tcl-55p755-p755-4k-uhd-google-tv-101227.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32taube-32taube-32asas.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32-led-smart-tv.png"
+      TV9,
+      TVTop,
+      TVSide
     ]
   },
   {
@@ -204,9 +221,9 @@ const data = [
     reviews: [],
     meta: { createdAt: "2025-04-01T19:00:00Z", updatedAt: "2025-05-01T19:00:00Z" },
     images: [
-      "https://irshad.az/cdn-cgi/image/width=315/storage/products/101227/tcl-55p755-p755-4k-uhd-google-tv-101227.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32taube-32taube-32asas.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32-led-smart-tv.png"
+      TV10,
+      TVTop,
+      TVSide
     ]
   },
   {
@@ -225,9 +242,9 @@ const data = [
     reviews: [],
     meta: { createdAt: "2025-03-01T20:00:00Z", updatedAt: "2025-05-01T20:00:00Z" },
     images: [
-      "https://irshad.az/cdn-cgi/image/width=315/storage/products/101078/43c655.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32taube-32taube-32asas.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32-led-smart-tv.png"
+      TV11,
+      TVTop,
+      TVSide
     ]
   },
   {
@@ -246,9 +263,9 @@ const data = [
     reviews: [],
     meta: { createdAt: "2025-05-05T21:00:00Z", updatedAt: "2025-05-01T21:00:00Z" },
     images: [
-      "https://irshad.az/cdn-cgi/image/width=315/storage/products/101077/50c65550c65550c655.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32taube-32taube-32asas.png",
-      "https://irshad.az/cdn-cgi/image/width=540,height=550/storage/products/102451/taube-32-led-smart-tv.png"
+      TV12,
+      TVTop,
+      TVSide
     ]
   }
 ];
