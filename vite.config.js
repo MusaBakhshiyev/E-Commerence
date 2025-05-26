@@ -7,6 +7,6 @@ export default defineConfig({
   server:{
     open: true,
   },
-  base:"/GadGetAll/",
-  
+  base:"/E-Commerence/",
+
 })

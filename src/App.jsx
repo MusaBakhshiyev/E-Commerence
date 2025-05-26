@@ -18,7 +18,7 @@ import Order from './pages/Order/Order'
 function App() {
 
   return (
-    <BrowserRouter basename='/GadGetAll/'>
+    <BrowserRouter basename='/E-Commerence/'>
       <div className="container">
         <Header />
         <main>
