@@ -39,6 +39,7 @@ export default function Compare() {
                         breakpoints={{
                             0: {
                                 slidesPerView: 1,
+                                 spaceBetween: 5,
                             },
                             700: {
                                 slidesPerView: 1.5,

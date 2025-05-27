@@ -18,7 +18,7 @@
 
 .take_photo {
     position: absolute;
-    bottom: 50px;
+    bottom: min(50px,7vw);
     right: 0;
     background-color: white;
 }

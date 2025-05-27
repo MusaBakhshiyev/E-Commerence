@@ -14,18 +14,22 @@
     flex-direction: column;
     border: 1px solid rgb(194, 194, 194);
     justify-content: space-between;
-    box-shadow: 0px 0px min(8px,0.5em) rgb(179, 179, 179);
+    box-shadow: 0px 0px min(8px, 0.5em) rgb(179, 179, 179);
     padding: 10px;
     border-radius: 10px;
-    height: 100%;    
-    gap:10px;
+    height: 100%;
+    gap: 10px;
     cursor: pointer;
 }
 
-.image_title h3{
-    height: clamp(32px,2em,50px);
+.image_title h3 {
+    height: clamp(32px, 2em, 50px);
     font-size: 1.1em;
     cursor: pointer;
+}
+
+.image_title h3:hover {
+   opacity: 0.7;
 }
 
 
@@ -64,7 +68,7 @@
 
 
 
-.go_cart{
+.go_cart {
     display: flex;
     align-items: center;
     gap: 5px;
@@ -73,8 +77,8 @@
     opacity: 1;
     color: white;
     font-size: 1em;
-    padding: min(10px,0.5em);
-    border-radius:  min(10px,0.6em);
+    padding: min(10px, 0.5em);
+    border-radius: min(10px, 0.6em);
     cursor: pointer;
 }
 
@@ -87,27 +91,30 @@
     opacity: 1;
 }
 
-.remove_favorite,.remove_Compare{
-    color:#f17a17;
+.remove_favorite,
+.remove_Compare {
+    color: #f17a17;
     opacity: 1 !important;
     transition: all 0.5s ease;
 }
-.remove_favorite:hover,.remove_Compare:hover{
+
+.remove_favorite:hover,
+.remove_Compare:hover {
     opacity: 0.5 !important;
 }
 
 .change_month {
     display: flex;
     justify-content: space-between;
-    gap:5px;
+    gap: 5px;
 }
 
 
 .price {
     display: flex;
     flex-direction: column;
-    border: 1px solid rgb(194, 194, 194);
-    padding: min(10px,0.8em);
+    border: 1px solid #f17a17;
+    padding: min(10px, 0.8em);
     border-radius: 10px;
     justify-content: center;
     gap: 5px;
@@ -127,19 +134,19 @@
 .partial_payment {
     display: flex;
     flex-direction: column;
-    border: 1px solid rgb(194, 194, 194);
-    padding: min(10px,0.8em);
+    border: 1px solid #f17a17;
+    padding: min(10px, 0.8em);
     gap: 5px;
     border-radius: 10px;
 }
 
-.partial_payment h3{
+.partial_payment h3 {
     font-size: 1.2em;
 }
 
 .periods {
     display: flex;
-    gap: min(10px,0.5em);
+    gap: min(10px, 0.5em);
 }
 
 .periods span {
@@ -151,13 +158,14 @@
 }
 
 .active_month {
-    border: 1px solid rgb(194, 194, 194);
+    color: white;
+    background-color: #f17a17;
 }
 
 .change_count {
     display: flex;
     justify-content: space-between;
-    gap:5px;
+    gap: 5px;
 }
 
 
@@ -167,7 +175,7 @@
     align-items: center;
     border: 1px solid rgb(194, 194, 194);
     font-size: 1.2em;
-    padding: min(10px,0.4em);
+    padding: min(10px, 0.4em);
     gap: 0.6em;
     border-radius: 10px;
 }
@@ -176,7 +184,7 @@
     background-color: #f17a17;
     color: white;
     font-size: 1em;
-    padding: min(10px,0.5em) clamp(5px,1em,30px);
+    padding: min(10px, 0.5em) clamp(5px, 1em, 30px);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -185,7 +193,7 @@
 }
 
 .change_count button span:first-child {
-    font-size: calc(1em + 6px) ;
+    font-size: calc(1em + 6px);
 }
 
 .count span:first-child,

@@ -162,7 +162,7 @@ export default function PopularCategories() {
 
         <section className={style.popular_categories_section}>
 
-            <h1>Popular Kategoriyalar</h1>
+            <h1>Populyar Kategoriyalar</h1>
             <div className={style.popular_categories}>
 
 
@@ -171,7 +171,7 @@ export default function PopularCategories() {
                         <span><TbBasketStar /></span>
 
                         <div className={style.info}>
-                            <h2>Reytingli Məhsullar</h2>
+                            <h2>Reytinqli Məhsullar</h2>
                         </div>
                     </div>
 
