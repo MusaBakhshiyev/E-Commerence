@@ -46,7 +46,7 @@ export default function PhotoCapture() {
         canvas.toBlob((blob) => {
             dispatch(addMessage({
                 type: 'photo',
-                blobUrl: URL.createObjectURL(blob),
+                blob: blob,
                 timestamp: Date.now(),
             }));
         }, 'image/jpeg');
